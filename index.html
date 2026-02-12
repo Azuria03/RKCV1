@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="">
+    <title>Race Kit Claiming</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏁 Race Kit Claiming</h1>
+            <p>Search and manage race kits</p>
+        </div>
+
+        <div class="content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('participant')">
+                    👤 Participant
+                </button>
+                <button class="tab" onclick="switchTab('admin')">
+                    🔐 Admin
+                </button>
+            </div>
+
+            <!-- Participant Section -->
+            <div id="participant-section" class="section active">
+                <div class="input-group">
+                    <label>Search Your Name</label>
+                    <input 
+                        type="text" 
+                        id="search-participant" 
+                        placeholder="Type your first or last name..."
+                        autocomplete="off"
+                    >
+                    <div id="participant-dropdown" class="dropdown"></div>
+                </div>
+
+                <div id="participant-selected" class="selected-box">
+                    <div class="selected-name" id="participant-name"></div>
+                    <div class="selected-info" id="participant-info"></div>
+                    <button class="btn btn-primary" onclick="viewDetails()">
+                        View My Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Section -->
+            <div id="admin-section" class="section">
+                <div class="input-group">
+                    <label>Admin Password</label>
+                    <input 
+                        type="password" 
+                        id="admin-password" 
+                        placeholder="Enter admin password"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Search Participant</label>
+                    <input 
+                        type="text" 
+                        id="search-admin" 
+                        placeholder="Type participant name..."
+                        autocomplete="off"
+                    >
+                    <div id="admin-dropdown" class="dropdown"></div>
+                </div>
+
+                <div id="admin-selected" class="selected-box">
+                    <div class="selected-name" id="admin-name"></div>
+                    <div class="selected-info" id="admin-info"></div>
+                    <button class="btn btn-primary" onclick="viewDetailsAdmin()">
+                        View Details
+                    </button>
+                    <button class="btn btn-danger" onclick="claimKit()">
+                        ✅ Claim Kit
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 10px;">Loading...</p>
+            </div>
+
+            <!-- Alert -->
+            <div id="alert"></div>
+
+            <!-- Info Card -->
+            <div id="info-card" class="info-card"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
